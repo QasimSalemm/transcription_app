@@ -4,7 +4,7 @@ def how_to_use_page():
     st.set_page_config(
         page_title="How to Use - Speech to Text App", 
         layout="wide",
-        page_icon="Images/voice.png"
+        page_icon="images/voice.png"
         )
 
     # Page Title

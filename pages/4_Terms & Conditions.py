@@ -4,7 +4,7 @@ def terms_page():
     st.set_page_config(
         page_title="Terms & Conditions - Speech to Text App", 
                        layout="wide",
-        page_icon="Images/voice.png"
+        page_icon="images/voice.png"
                        )
 
     # Page Title

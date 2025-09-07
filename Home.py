@@ -4,8 +4,6 @@ import tempfile
 import time
 import pandas as pd
 import streamlit as st
-import tempfile
-import streamlit as st
 from moviepy import AudioFileClip, VideoFileClip
 from faster_whisper import WhisperModel
 import toml
@@ -149,7 +147,8 @@ def main():
     st.set_page_config(
         page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit", 
         layout="wide",
-        page_icon="Images/voice.png")
+        page_icon="images/voice.png"
+        )
     st.title("Free Speech-to-Text Transcription")
     st.write("Convert audio and video files into accurate text with our free Speech-to-Text Transcription App. Powered by Faster-Whisper and Streamlit, it supports multiple languages, timestamps, chunking, and CSV export. Fast, lightweight, and easy to use.")
     st.divider()
