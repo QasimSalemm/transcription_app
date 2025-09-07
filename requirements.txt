@@ -1,0 +1,6 @@
+streamlit
+moviepy
+pandas
+faster-whisper
+toml
+streamlit-logger
