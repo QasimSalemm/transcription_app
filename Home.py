@@ -146,7 +146,7 @@ def format_transcription_for_csv(transcription_results, include_words=False, chu
 def main():
     st.set_page_config(
         page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit",   
-        page_icon="images/voice.png",
+        page_icon="Images/voice.png",
         layout="wide"
         )
     st.title("Free Speech-to-Text Transcription")

@@ -4,7 +4,7 @@ def about_page():
     st.set_page_config(
         page_title="About Us - Speech to Text App", 
         layout="wide",
-        page_icon="images/voice.png"
+        page_icon="Images/voice.png"
         )
 
     # Page Title (H1)
