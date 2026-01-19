@@ -4,7 +4,7 @@ import tempfile
 import time
 import pandas as pd
 import streamlit as st
-from moviepy import AudioFileClip, VideoFileClip
+from moviepy.editor import AudioFileClip, VideoFileClip
 from faster_whisper import WhisperModel
 import toml
 import streamlit_logger as sl
@@ -34,7 +34,7 @@ def extract_audio_from_video(video_path):
         if audio_clip is None:
             clip.close()
             return None
-        logger = sl.StreamlitLogger(audio_clip)
+        logger = sl.StreamlitLogger()
         audio_clip.write_audiofile(audio_path, codec="pcm_s16le",logger=logger)
         audio_clip.close()
         clip.close()
@@ -169,46 +169,7 @@ def main():
                 "borderColor": "mediumSlateBlue"
             }
         }
-    }
-
-    # ----------------------------
-    # Read current theme from config
-    # ----------------------------
-    def get_current_theme():
-        if os.path.exists(CONFIG_PATH):
-            try:
-                config = toml.load(CONFIG_PATH)
-                base = config.get("theme", {}).get("base", "Light")
-                # Match with our keys
-                if base.lower() == "dark":
-                    return "Dark"
-                else:
-                    return "Light"
-            except:
-                return "Light"
-        else:
-            return "Light"
-    
-    current_theme = get_current_theme()
-    
-    # Sidebar radio with default
-    choice = st.sidebar.radio(
-        "Select Theme", 
-        list(THEMES.keys()), 
-        index=list(THEMES.keys()).index(current_theme)
-
-    )
-    
-    # Apply button
-    if st.sidebar.button("Apply Theme"):
-        os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
-        with open(CONFIG_PATH, "w") as f:
-            toml.dump(THEMES[choice], f)
-        st.sidebar.success(f"{choice} theme applied!")  
-        time.sleep(0.5)
-        st.rerun()  
-    
-    
+    }  
     
     # Session state init
     if "df" not in st.session_state:
@@ -230,7 +191,7 @@ def main():
 
 
     # ✅ Always show this (was wrongly inside the else block before)
-    include_words = st.checkbox("Include word-level timestamps", value=True)
+    include_words = st.checkbox("Include word-level timestamps", value=False)
 
     # New: chunk size input
     chunk_size = st.number_input(
