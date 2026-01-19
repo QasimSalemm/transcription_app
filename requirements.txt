@@ -3,3 +3,4 @@ moviepy<2.0.0
 pandas==2.3.3
 faster-whisper==1.2.0
 toml==0.10.2
+Pillow
