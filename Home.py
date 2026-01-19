@@ -14,6 +14,13 @@ import streamlit_logger as sl
 import languages as lang
 
 
+st.set_page_config(
+    page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit",
+    page_icon="Images/voice.png",
+    layout="wide"
+)
+
+
 # -----------------------------
 # Local Css All Buttons
 # -----------------------------
@@ -147,11 +154,6 @@ def format_transcription_for_csv(transcription_results, include_words=False, chu
 # Streamlit UI
 # -------------------------------
 def main():
-    st.set_page_config(
-        page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit",   
-        page_icon="Images/voice.png",
-        layout="wide"
-        )
     st.title("Free Speech-to-Text Transcription")
     st.write("Convert audio and video files into accurate text with our free Speech-to-Text Transcription App. Powered by Faster-Whisper and Streamlit, it supports multiple languages, timestamps, chunking, and CSV export. Fast, lightweight, and easy to use.")
     st.divider()
