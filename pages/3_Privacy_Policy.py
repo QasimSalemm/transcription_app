@@ -1,16 +1,10 @@
-import os
 import streamlit as st
 
 def privacy_policy_page():
-    # Find image path relative to this file
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    parent_dir = os.path.dirname(current_dir)
-    icon_path = os.path.join(parent_dir, "Images", "voice.png")
-
     st.set_page_config(
         page_title="Privacy Policy - Speech to Text App", 
         layout="wide",
-        page_icon=icon_path
+        page_icon="🎙️"
         )
 
     # Page Title (H1)

@@ -14,13 +14,9 @@ import streamlit_logger as sl
 import languages as lang
 
 
-# Find image path relative to this file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-icon_path = os.path.join(current_dir, "Images", "voice.png")
-
 st.set_page_config(
     page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit",
-    page_icon=icon_path,
+    page_icon="🎙️",
     layout="wide"
 )
 
