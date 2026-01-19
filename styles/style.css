@@ -1,3 +1,4 @@
-button[data-testid="stBaseButton-secondary"] {
-    width: 150px !important;
+/* Removed fixed width to allow responsiveness */
+button {
+    transition: all 0.3s ease;
 }

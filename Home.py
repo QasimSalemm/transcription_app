@@ -222,14 +222,13 @@ def main():
     # -------------------------------
     # Buttons row
     # -------------------------------
-    col1, col2, col3 = st.columns([10, 3, 3])
-    with col1:
-        pass
+    # Create a layout that works better for buttons
+    _, col2, col3 = st.columns([8, 4, 4])
     with col2:
-        if st.button("Start Transcription"):
+        if st.button("Start Transcription", use_container_width=True):
             st.session_state.start_transcription = True
     with col3:
-        if st.button("Clear All"):
+        if st.button("Clear All", use_container_width=True):
             st.session_state.start_transcription = False
             if st.session_state.audio_path and os.path.exists(st.session_state.audio_path):
                 os.remove(st.session_state.audio_path)
