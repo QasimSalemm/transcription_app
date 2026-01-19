@@ -4,7 +4,10 @@ import tempfile
 import time
 import pandas as pd
 import streamlit as st
-from moviepy.editor import AudioFileClip, VideoFileClip
+try:
+    from moviepy.editor import AudioFileClip, VideoFileClip
+except ImportError:
+    from moviepy import AudioFileClip, VideoFileClip
 from faster_whisper import WhisperModel
 import toml
 import streamlit_logger as sl
