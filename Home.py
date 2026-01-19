@@ -16,7 +16,7 @@ import languages as lang
 
 st.set_page_config(
     page_title="Free Speech-to-Text Transcription App | Faster-Whisper with Streamlit",
-    page_icon="🎙️",
+    page_icon="Images/voice.png",
     layout="wide"
 )
 
