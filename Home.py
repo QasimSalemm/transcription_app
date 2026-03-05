@@ -123,11 +123,11 @@ def format_transcription_for_csv(transcription_results, include_words=False, chu
                 for i in range(0, len(words), chunk_size):
                     chunk = words[i:i + chunk_size]
                     chunk_text = " ".join([w["text"] for w in chunk])
-                    start_time = chunk[0]["start"]
-                    end_time = chunk[-1]["end"]
+                    start = chunk[0]["start"]
+                    end = chunk[-1]["end"]
                     formatted_data.append({
-                        "start_time": start_time,
-                        "end_time": end_time,
+                        "start": start,
+                        "end": end,
                         "text": chunk_text
                     })
 
@@ -135,16 +135,16 @@ def format_transcription_for_csv(transcription_results, include_words=False, chu
             elif include_words and words:
                 for w in words:
                     formatted_data.append({
-                        "start_time": w["start"],
-                        "end_time": w["end"],
+                        "start": w["start"],
+                        "end": w["end"],
                         "text": w["text"]
                     })
 
             # fallback: segment only
             else:
                 formatted_data.append({
-                    "start_time": segment["start"],
-                    "end_time": segment["end"],
+                    "start": segment["start"],
+                    "end": segment["end"],
                     "text": segment["text"].strip()
                 })
     return formatted_data
